@@ -40,9 +40,9 @@ aggreagatedInterval<-aggregate(steps2$steps, by=list(steps2$interval), mean)
 plot(x= aggreagatedInterval$Group.1, xlab = "Steps", main = "Avg Steps per Interval", type = "l", y= aggreagatedInterval$x, ylab= "Interval", col="BLUE")
 ```
 
-## Imputing missing values
+## Inputting missing values
 
-To reduce the impact of the ```{r} dim((steps[is.na(steps['steps']),]))[1] ``` recoirds missing values, those records received the average count for the same interval, always with a rounded value.
+To reduce the impact of the ```{r} dim((steps[is.na(steps['steps']),]))[1] ``` records missing values, those records received the average count for the same interval, always with a rounded value.
 
 The following code was used:
 

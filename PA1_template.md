@@ -20,7 +20,7 @@ mean(aggreagatedSteps$x) #mean
 ```
 
 ```
-## [1] 10766
+## [1] 10766.19
 ```
 
 ```r
@@ -42,7 +42,7 @@ The plot for this example is the following:
 plot(y= aggreagatedSteps$x, ylab = "Steps", main = "Steps per Day", type = "h", x= aggreagatedSteps$Group.1, xlab= "Date", col="BLUE") 
 ```
 
-![plot of chunk unnamed-chunk-3](./PA1_template_files/figure-html/unnamed-chunk-3.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
 ## What is the average daily activity pattern?
 
@@ -52,11 +52,11 @@ aggreagatedInterval<-aggregate(steps2$steps, by=list(steps2$interval), mean)
 plot(x= aggreagatedInterval$Group.1, xlab = "Steps", main = "Avg Steps per Interval", type = "l", y= aggreagatedInterval$x, ylab= "Interval", col="BLUE")
 ```
 
-![plot of chunk unnamed-chunk-4](./PA1_template_files/figure-html/unnamed-chunk-4.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
 
-## Imputing missing values
+## Inputting missing values
 
-To reduce the impact of the ```{r} dim((steps[is.na(steps['steps']),]))[1] ``` recoirds missing values, those records received the average count for the same interval, always with a rounded value.
+To reduce the impact of the ```{r} dim((steps[is.na(steps['steps']),]))[1] ``` records missing values, those records received the average count for the same interval, always with a rounded value.
 
 The following code was used:
 
@@ -77,14 +77,14 @@ For comparison those are the results:
 plot(y= stepsFixed$steps, ylab = "Steps", main = "Steps per Day", type = "h", x= stepsFixed$date, xlab= "Date", col="BLUE") #imprimindo histogram
 ```
 
-![plot of chunk unnamed-chunk-6](./PA1_template_files/figure-html/unnamed-chunk-6.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
 
 ```r
 mean(stepsFixed$steps) #mean
 ```
 
 ```
-## [1] 37.38
+## [1] 37.38069
 ```
 
 ```r
@@ -125,4 +125,4 @@ library(lattice)
 xyplot(x~Group.1|factor(day),data=aggregatedIntervalF,aspect="xy",type="l", xlab = 'Date', ylab='Steps')
 ```
 
-![plot of chunk unnamed-chunk-10](./PA1_template_files/figure-html/unnamed-chunk-10.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
